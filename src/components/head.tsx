@@ -1,7 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-export default function Head(props) {
+interface PropsInterface {
+    lang: string,
+    title: string
+}
+
+export default function Head(props: PropsInterface) {
     return (
         <Helmet>
             <html lang={props.lang ? props.lang : 'en'} />
