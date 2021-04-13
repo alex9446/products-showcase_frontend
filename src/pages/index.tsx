@@ -1,5 +1,11 @@
 import React from 'react';
 
+import Head from '../components/head';
+
 export default function Index() {
-    return <div>Hello World!</div>;
+    return (
+        <div id="index-page">
+            <Head />
+        </div>
+    );
 }
