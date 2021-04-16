@@ -1,4 +1,4 @@
-# Message List [FRONTEND]
+# Products Showcase [FRONTEND]
 Main repository: https://gitlab.com/alex9446/products-showcase_frontend
 
 dev branch deploy: https://products-showcase.netlify.app
