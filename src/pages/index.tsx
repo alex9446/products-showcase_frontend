@@ -1,7 +1,9 @@
+import { mdiAccount } from '@mdi/js';
 import React from 'react';
 
 import BoxList from '../components/box-list/box-list';
 import Head from '../components/head';
+import LinkIcon from '../components/icon/link-icon';
 import PageHeading from '../components/page-heading';
 
 export default function Index() {
@@ -15,6 +17,11 @@ export default function Index() {
     return (
         <div id="index-page">
             <Head />
+            <LinkIcon
+                to="/login"
+                path={mdiAccount}
+                class="profile-icon corner-icon"
+            />
             <PageHeading>Products Showcase</PageHeading>
             <BoxList>{FAKE_BOXES}</BoxList>
         </div>

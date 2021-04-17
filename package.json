@@ -11,6 +11,8 @@
   "author": "Alessio Margelli <alex9446@gmail.com>",
   "license": "AGPL-3.0",
   "dependencies": {
+    "@mdi/js": "^5.9.55",
+    "@mdi/react": "^1.5.0",
     "gatsby": "^3.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
