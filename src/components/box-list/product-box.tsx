@@ -1,15 +1,24 @@
+import { Link } from 'gatsby';
 import React from 'react';
 
+interface Images {
+    base64_image: string,
+    position: number
+}
+
 export interface ProductBoxInterface {
-    image: string,
+    id: string,
+    images: Images[],
     name: string
 }
 
 export default function ProductBox(props: ProductBoxInterface) {
     return (
         <div className="product-box">
-            <img src={props.image} />
-            <div>{props.name}</div>
+            <Link to={`/?product=${props.id}`}>
+                <img src={props.images[0].base64_image} />
+                <div>{props.name}</div>
+            </Link>
         </div>
     );
 }
