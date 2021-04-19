@@ -12,12 +12,14 @@ import PageHeading from '../components/page-heading';
 import Product from '../components/product';
 
 export default function Index(props: PageProps) {
-    const productId = getProductIdFromSearch(props.location.search);
+    const searchedProductId = getProductIdFromSearch(props.location.search);
+    const selectedProduct = FAKE_BOXES.find(product => product.id === searchedProductId);
+    const pageTitle = selectedProduct ? selectedProduct.name : '';
 
     return (
         <>
             <div id="index-page">
-                <Head />
+                <Head title={pageTitle} />
                 <LinkIcon
                     to="/login"
                     path={mdiAccount}
@@ -26,7 +28,7 @@ export default function Index(props: PageProps) {
                 <PageHeading>Products Showcase</PageHeading>
                 <BoxList>{FAKE_BOXES}</BoxList>
             </div>
-            {productId && <Product id={productId} />}
+            {selectedProduct && <Product>{selectedProduct}</Product>}
         </>
     );
 }

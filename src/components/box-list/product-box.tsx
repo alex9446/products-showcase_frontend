@@ -13,10 +13,12 @@ export interface ProductBoxInterface {
 }
 
 export default function ProductBox(props: ProductBoxInterface) {
+    const default_image = props.images.find(image => image.position === 0);
+
     return (
         <div className="product-box">
             <Link to={`/?product=${props.id}`}>
-                <img src={props.images[0].base64_image} />
+                <img src={default_image ? default_image.base64_image : ''} />
                 <div>{props.name}</div>
             </Link>
         </div>

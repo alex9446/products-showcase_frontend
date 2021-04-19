@@ -9,7 +9,7 @@ interface PropsInterface {
 export default function BoxList(props: PropsInterface) {
     return (
         <div className="box-list">
-            {props.children.map(box => <ProductBox id={box.id} images={box.images} name={box.name} />)}
+            {props.children.map(box => <ProductBox key={box.id} id={box.id} images={box.images} name={box.name} />)}
         </div>
     );
 }
