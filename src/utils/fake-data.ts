@@ -4,6 +4,7 @@ export const FAKE_BOXES = [
         id: 'a123',
         name: 'TEST',
         description: '1 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
+        sku: 'test-s01',
         images: [
             {
                 base64_image: PLACEHOLDER_IMAGE,
@@ -19,6 +20,7 @@ export const FAKE_BOXES = [
         id: 'b',
         name: 'TEST',
         description: '2 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
+        sku: 'test-s02',
         images: [
             {
                 base64_image: PLACEHOLDER_IMAGE,
@@ -30,6 +32,7 @@ export const FAKE_BOXES = [
         id: 'c',
         name: 'TEST',
         description: '3 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
+        sku: 'test-s03',
         images: [
             {
                 base64_image: PLACEHOLDER_IMAGE,

@@ -9,7 +9,7 @@ import BoxList from '../components/box-list/box-list';
 import Head from '../components/head';
 import LinkIcon from '../components/icon/link-icon';
 import PageHeading from '../components/page-heading';
-import Product from '../components/product';
+import ProductModal from '../components/product-modal/product-modal';
 
 export default function Index(props: PageProps) {
     const searchedProductId = getProductIdFromSearch(props.location.search);
@@ -28,7 +28,7 @@ export default function Index(props: PageProps) {
                 <PageHeading>Products Showcase</PageHeading>
                 <BoxList>{FAKE_BOXES}</BoxList>
             </div>
-            {selectedProduct && <Product>{selectedProduct}</Product>}
+            {selectedProduct && <ProductModal>{selectedProduct}</ProductModal>}
         </>
     );
 }
