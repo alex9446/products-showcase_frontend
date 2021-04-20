@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-interface Images {
+export interface Images {
     base64_image: string,
     position: number
 }

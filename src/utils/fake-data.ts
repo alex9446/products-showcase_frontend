@@ -3,6 +3,7 @@ export const FAKE_BOXES = [
     {
         id: 'a123',
         name: 'TEST',
+        price: 5.99,
         description: '1 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
         sku: 'test-s01',
         images: [
@@ -19,6 +20,7 @@ export const FAKE_BOXES = [
     {
         id: 'b',
         name: 'TEST',
+        price: 9.99,
         description: '2 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
         sku: 'test-s02',
         images: [
@@ -31,6 +33,7 @@ export const FAKE_BOXES = [
     {
         id: 'c',
         name: 'TEST',
+        price: 19.99,
         description: '3 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
         sku: 'test-s03',
         images: [
