@@ -12,8 +12,9 @@ import PageHeading from '../components/page-heading';
 import ProductModal from '../components/product-modal/product-modal';
 
 export default function Index(props: PageProps) {
+    const sortedProducts = FAKE_BOXES.sort((a, b) => a.position - b.position);
     const searchedProductId = getProductIdFromSearch(props.location.search);
-    const selectedProduct = FAKE_BOXES.find(product => product.id === searchedProductId);
+    const selectedProduct = sortedProducts.find(product => product.id === searchedProductId);
     const pageTitle = selectedProduct ? selectedProduct.name : '';
 
     return (
@@ -26,7 +27,7 @@ export default function Index(props: PageProps) {
                     class="profile-icon corner-icon"
                 />
                 <PageHeading>Products Showcase</PageHeading>
-                <BoxList>{FAKE_BOXES}</BoxList>
+                <BoxList>{sortedProducts}</BoxList>
             </div>
             {selectedProduct && <ProductModal>{selectedProduct}</ProductModal>}
         </>

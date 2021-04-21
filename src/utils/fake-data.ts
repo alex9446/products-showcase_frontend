@@ -6,6 +6,7 @@ export const FAKE_BOXES = [
         price: 5.99,
         description: '1 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
         sku: 'test-s01',
+        position: 2,
         images: [
             {
                 base64_image: PLACEHOLDER_IMAGE,
@@ -23,6 +24,7 @@ export const FAKE_BOXES = [
         price: 9.99,
         description: '2 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
         sku: 'test-s02',
+        position: 1,
         images: [
             {
                 base64_image: PLACEHOLDER_IMAGE,
@@ -36,6 +38,7 @@ export const FAKE_BOXES = [
         price: 19.99,
         description: '3 - Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua',
         sku: 'test-s03',
+        position: 0,
         images: [
             {
                 base64_image: PLACEHOLDER_IMAGE,
