@@ -47,3 +47,9 @@ export const FAKE_BOXES = [
         ]
     }
 ];
+
+export const FAKE_USERS = [
+    { id: 'a1', name: 'admin', role: 'admin' },
+    { id: 'b2', name: 'rose', role: 'manager' },
+    { id: 'c3', name: 'alex', role: 'admin' }
+]
