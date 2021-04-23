@@ -14,7 +14,7 @@ export default function UsersList(props: PropsInterface) {
                 <div>Role</div>
                 <div>Actions</div>
             </div>
-            {props.children.map(user => <UserRow name={user.name} role={user.role} />)}
+            {props.children.map(user => <UserRow key={user.id} id={user.id} name={user.name} role={user.role} />)}
         </div>
     );
 }
