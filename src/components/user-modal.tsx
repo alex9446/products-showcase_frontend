@@ -1,9 +1,13 @@
 import React from 'react';
 
+import ExitIcon from './icon/exit-icon';
 import { UserRowInterface } from './users-list/user-row';
 import PageHeading from './page-heading';
 
-interface UserInterface extends UserRowInterface {}
+interface UserInterface extends UserRowInterface {
+    first_name: string,
+    last_name: string
+}
 
 interface UserModalInterface {
     children: UserInterface
@@ -29,8 +33,11 @@ export default function UserModal(props: UserModalInterface) {
 
     return (
         <div className="user-modal">
+            <ExitIcon to="/users" />
             <PageHeading>User</PageHeading>
             <UserModalRow class="name" label="Name" value={user.name} />
+            <UserModalRow class="first-name" label="First name" value={user.first_name} />
+            <UserModalRow class="last-name" label="Last name" value={user.last_name} />
             <UserModalRow class="role" label="Role" value={user.role} />
         </div>
     );
