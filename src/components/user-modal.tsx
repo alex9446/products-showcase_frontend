@@ -5,8 +5,8 @@ import { UserRowInterface } from './users-list/user-row';
 import PageHeading from './page-heading';
 
 interface UserInterface extends UserRowInterface {
-    first_name: string,
-    last_name: string
+    first_name: string|null,
+    last_name: string|null
 }
 
 interface UserModalInterface {

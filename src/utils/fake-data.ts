@@ -49,7 +49,7 @@ export const FAKE_BOXES = [
 ];
 
 export const FAKE_USERS = [
-    { id: 'a1', name: 'admin', role: 'admin' },
-    { id: 'b2', name: 'rose', role: 'manager' },
-    { id: 'c3', name: 'alex', role: 'admin' }
+    { id: 'a1', name: 'admin', first_name: null, last_name: null, role: 'admin' },
+    { id: 'b2', name: 'rose', first_name: null, last_name: null, role: 'manager' },
+    { id: 'c3', name: 'alex', first_name: null, last_name: null, role: 'admin' }
 ]
