@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PageProps } from 'gatsby';
 
 import ExitIcon from '../components/icon/exit-icon';
@@ -10,8 +10,10 @@ import UsersList from '../components/users-list/users-list';
 import UserModal from '../components/user-modal';
 
 export default function Users(props: PageProps) {
+    const [users, setUsers] = useState(FAKE_USERS);
+
     const searchedUserId = getUserIdFromSearch(props.location.search);
-    const selectedUser = FAKE_USERS.find(user => user.id === searchedUserId);
+    const selectedUser = users.find(user => user.id === searchedUserId);
 
     return (
         <>
@@ -19,7 +21,7 @@ export default function Users(props: PageProps) {
                 <Head title="Users" />
                 <ExitIcon to="/" />
                 <PageHeading>Users</PageHeading>
-                <UsersList>{FAKE_USERS}</UsersList>
+                <UsersList>{users}</UsersList>
             </div>
             {selectedUser && <UserModal>{selectedUser}</UserModal>}
         </>

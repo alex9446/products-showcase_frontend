@@ -1,6 +1,6 @@
 import { mdiAccount } from '@mdi/js';
 import { PageProps } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FAKE_BOXES } from '../utils/fake-data';
 import { getProductIdFromSearch } from '../utils/mixed';
@@ -12,7 +12,9 @@ import PageHeading from '../components/page-heading';
 import ProductModal from '../components/product-modal/product-modal';
 
 export default function Index(props: PageProps) {
-    const sortedProducts = FAKE_BOXES.sort((a, b) => a.position - b.position);
+    const [products, setProducts] = useState(FAKE_BOXES.slice(0,6));
+
+    const sortedProducts = products.sort((a, b) => a.position - b.position);
     const searchedProductId = getProductIdFromSearch(props.location.search);
     const selectedProduct = sortedProducts.find(product => product.id === searchedProductId);
     const pageTitle = selectedProduct ? selectedProduct.name : '';
