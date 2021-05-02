@@ -21,9 +21,11 @@ export default function ProductModal(props: PropsInterface) {
     return (
         <div className="product-modal">
             <ExitIcon to="/" />
-            <ImageSlider>{sortedImages}</ImageSlider>
-            <div className="price-box">
-                <div className="standard-price">{product.price}€</div>
+            <div className="images-with-price">
+                <ImageSlider>{sortedImages}</ImageSlider>
+                <div className="price-box">
+                    <div className="standard-price">{product.price}€</div>
+                </div>
             </div>
             <div className="title">{product.name}</div>
             <p className="description">{product.description}</p>

@@ -1,4 +1,4 @@
-import { mdiAccount } from '@mdi/js';
+import { mdiAccount, mdiLogoutVariant } from '@mdi/js';
 import { PageProps } from 'gatsby';
 import React, { useState } from 'react';
 
@@ -27,6 +27,11 @@ export default function Index(props: PageProps) {
                     to="/login"
                     path={mdiAccount}
                     class="profile-icon corner-icon"
+                />
+                <LinkIcon
+                    to="/logout"
+                    path={mdiLogoutVariant}
+                    class="logout-icon corner-icon"
                 />
                 <PageHeading>Products Showcase</PageHeading>
                 <BoxList>{sortedProducts}</BoxList>
