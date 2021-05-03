@@ -3,6 +3,7 @@ import React from 'react';
 import ExitIcon from '../icon/exit-icon';
 import ImageSlider from './image-slider';
 import { ProductBoxInterface } from '../box-list/product-box';
+import { sortAscByPosition } from '../../utils/mixed';
 
 interface ProductInterface extends ProductBoxInterface {
     price: number,
@@ -16,7 +17,7 @@ interface PropsInterface {
 
 export default function ProductModal(props: PropsInterface) {
     const product = props.children;
-    const sortedImages = product.images.sort((a, b) => a.position - b.position);
+    const sortedImages = sortAscByPosition(product.images);
 
     return (
         <div className="product-modal">

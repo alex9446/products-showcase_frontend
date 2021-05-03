@@ -11,3 +11,11 @@ export function getProductIdFromSearch(search: string): string|null {
 export function getUserIdFromSearch(search: string): string|null {
     return getWithRegEx(/\?user\=(\w+)/, search);
 }
+
+interface objectWithPosition { position: number }
+export function sortAscByPosition<T extends objectWithPosition>(list: T[]): T[] {
+    return list.sort((a, b) => a.position - b.position);
+}
+export function sortDescByPosition<T extends objectWithPosition>(list: T[]): T[] {
+    return list.sort((a, b) => b.position - a.position);
+}
