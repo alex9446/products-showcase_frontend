@@ -39,6 +39,8 @@ export default function UserModal(props: UserModalInterface) {
             <UserModalRow class="first-name" label="First name" value={user.first_name} />
             <UserModalRow class="last-name" label="Last name" value={user.last_name} />
             <UserModalRow class="role" label="Role" value={user.role} />
+            <button className="save">Save</button>
+            <button className="delete">Delete User</button>
         </div>
     );
 }
