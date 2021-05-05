@@ -14,18 +14,20 @@ function getFetchOptions(method: string, json: {}): optionsInterface {
 }
 
 export default function apiConnector(endpoint: string, method='GET', json={}): Promise<{}> {
-  return new Promise((resolve, reject) => {
-    const cors_url = process.env.GATSBY_USE_CORS === 'TRUE' ? 'https://cors-anywhere.herokuapp.com/' : '';
-    const host = process.env.GATSBY_API_HOST || '';
-    const protocol = process.env.GATSBY_API_PROTOCOL || (host === '' ? '' : 'https://');
+    return new Promise((resolve, reject) => {
+        const cors_url = process.env.GATSBY_USE_CORS === 'TRUE' ? 'https://cors-anywhere.herokuapp.com/' : '';
+        const host = process.env.GATSBY_API_HOST || '';
+        const protocol = process.env.GATSBY_API_PROTOCOL || (host === '' ? '' : 'https://');
 
-    const url = cors_url + protocol + host + endpoint;
-    const options = getFetchOptions(method, json);
+        const url = cors_url + protocol + host + endpoint;
+        const options = getFetchOptions(method, json);
 
-    fetch(url, options).then(response => {
-      response.json().then(response_json => {
-        response_json.error ? reject(response_json.error) : resolve(response_json);
-      }).catch(error => reject(error));
-    }).catch(error => reject(error));
-  });
+        fetch(url, options).then(response => {
+            response.json().then(response_json => {
+                if (response_json.status === 'ok')    return resolve(response_json);
+                if (response_json.status === 'error') return reject(response_json.message);
+                return reject(response.status);
+            }).catch(error => reject(error));
+        }).catch(error => reject(error));
+    });
 }
