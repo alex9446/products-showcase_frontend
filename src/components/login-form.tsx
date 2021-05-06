@@ -3,19 +3,19 @@ import React, { useState } from 'react';
 import InputBox from './input-box';
 
 export default function LoginForm() {
-    const [user, setUser] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
-        console.debug(`User: ${user} \nPassword: ${password}`);
+        console.debug(`User: ${name} \nPassword: ${password}`);
     }
 
     return (
-        <form>
-            <InputBox onChange={setUser} type="text" placeholder="name" value={user} />
+        <form onSubmit={handleSubmit}>
+            <InputBox onChange={setName} type="text" placeholder="name" value={name} />
             <InputBox onChange={setPassword} type="password" placeholder="password" value={password} />
-            <input onClick={handleSubmit} type="submit" value="Submit" />
+            <input type="submit" value="Submit" />
         </form>
     );
 }
