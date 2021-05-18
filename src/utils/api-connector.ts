@@ -14,7 +14,7 @@ function getFetchOptions(method: string, json: {}): optionsInterface {
 }
 
 export default async function apiConnector(endpoint: string, method='GET', json={}): Promise<{}> {
-    const cors_url = process.env.GATSBY_USE_CORS === 'TRUE' ? 'https://cors-anywhere.herokuapp.com/' : '';
+    const cors_url = process.env.GATSBY_CORS_URL || '';
     const host = process.env.GATSBY_API_HOST || '';
     const protocol = process.env.GATSBY_API_PROTOCOL || (host === '' ? '' : 'https://');
 
