@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import apiConnector from '../utils/api-connector';
 import InputBox from './input-box';
 
 export default function LoginForm() {
@@ -8,7 +9,10 @@ export default function LoginForm() {
 
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
-        console.debug(`User: ${name} \nPassword: ${password}`);
+        const loginData = { name: name, password: password };
+        apiConnector('/login', 'POST', loginData)
+        .then(response => console.debug(response))
+        .catch(error => console.error(error.toString()));
     }
 
     return (

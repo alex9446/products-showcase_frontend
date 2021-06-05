@@ -21,13 +21,9 @@ export default async function apiConnector(endpoint: string, method='GET', json=
     const url = cors_url + protocol + host + endpoint;
     const options = getFetchOptions(method, json);
 
-    try {
-        const response = await fetch(url, options);
-        const response_json = await response.json();
-        if (response_json.status === 'ok') return response_json;
-        if (response_json.status === 'error') throw response_json.message;
-        throw response.status;
-    } catch (error) {
-        throw error;
-    }
+    const response = await fetch(url, options);
+    const response_json = await response.json();
+    if (response_json.status === 'ok') return response_json;
+    if (response_json.status === 'error') throw new Error(response_json.message);
+    throw new Error(`Response status code: ${response.status}`);
 }
