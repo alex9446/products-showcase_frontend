@@ -13,7 +13,7 @@ function getFetchOptions(method: string, json: {}): optionsInterface {
     }
 }
 
-export default async function apiConnector(endpoint: string, method='GET', json={}): Promise<{}> {
+export default async function apiConnector<T>(endpoint: string, method='GET', json={}): Promise<T> {
     const cors_url = process.env.GATSBY_CORS_URL || '';
     const host = process.env.GATSBY_API_HOST || '';
     const protocol = process.env.GATSBY_API_PROTOCOL || (host === '' ? '' : 'https://');

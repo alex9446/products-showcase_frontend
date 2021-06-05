@@ -1,7 +1,9 @@
+import { navigate } from 'gatsby';
 import React, { useState } from 'react';
 
 import apiConnector from '../utils/api-connector';
 import InputBox from './input-box';
+import { saveToken } from '../utils/mixed';
 
 export default function LoginForm() {
     const [name, setName] = useState('');
@@ -10,8 +12,11 @@ export default function LoginForm() {
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
         const loginData = { name: name, password: password };
-        apiConnector('/login', 'POST', loginData)
-        .then(response => console.debug(response))
+        apiConnector<{token: string}>('/login', 'POST', loginData)
+        .then(response => {
+            saveToken(response.token);
+            navigate('/');
+        })
         .catch(error => console.error(error.toString()));
     }
 
