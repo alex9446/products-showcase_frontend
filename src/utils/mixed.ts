@@ -20,11 +20,6 @@ export function sortDescByPosition<T extends objectWithPosition>(list: T[]): T[]
     return list.sort((a, b) => b.position - a.position);
 }
 
-// Yes, i know, this is not a best practice, but as written in the README the project is for educational purposes
-export function saveToken(token: string): void {
-    localStorage.setItem('token', token);
-}
-
-export function getToken(): string {
-    return localStorage.getItem('token') || '';
+export function consoleLogError(error: Error): void {
+    console.error(error.toString());
 }

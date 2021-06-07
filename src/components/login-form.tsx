@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 
 import apiConnector from '../utils/api-connector';
 import InputBox from './input-box';
-import { saveToken } from '../utils/mixed';
+import { saveToken } from '../utils/login';
+import { consoleLogError } from '../utils/mixed';
 
 export default function LoginForm() {
     const [name, setName] = useState('');
@@ -17,7 +18,7 @@ export default function LoginForm() {
             saveToken(response.token);
             navigate('/');
         })
-        .catch(error => console.error(error.toString()));
+        .catch(consoleLogError);
     }
 
     return (
