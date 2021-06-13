@@ -5,7 +5,7 @@ import ExitIcon from '../components/icon/exit-icon';
 import Head from '../components/head';
 import LoginForm from '../components/login-form';
 import PageHeading from '../components/page-heading';
-import { checkLogin } from '../utils/login';
+import { checkLogin } from '../utils/auth';
 import { consoleLogError } from '../utils/mixed';
 
 export default function Login() {
@@ -22,8 +22,8 @@ export default function Login() {
             <Head title="Login" />
             <ExitIcon to="/" />
             <PageHeading>Login</PageHeading>
-            {logged && <div>Already correctly logged, return to <Link to="/">home</Link>.</div>}
             <LoginForm />
+            {logged && <div className="already-logged">Already correctly logged, return to <Link to="/">home</Link>.</div>}
         </div>
     );
 }

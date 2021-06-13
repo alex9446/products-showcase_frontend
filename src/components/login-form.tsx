@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import apiConnector from '../utils/api-connector';
 import InputBox from './input-box';
-import { saveToken } from '../utils/login';
+import { saveToken } from '../utils/auth';
 import { consoleLogError } from '../utils/mixed';
 
 export default function LoginForm() {

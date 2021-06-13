@@ -9,6 +9,10 @@ export function getToken(): string {
     return localStorage.getItem('token') || '';
 }
 
+export function deleteToken(): void {
+    localStorage.removeItem('token');
+}
+
 export async function checkLogin() {
     return await apiConnector('/login', 'GET', undefined, getToken());
 }
