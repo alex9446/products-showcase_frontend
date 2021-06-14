@@ -14,12 +14,12 @@ import ProductModal from '../components/product-modal/product-modal';
 
 export default function Index(props: PageProps) {
     const [products, setProducts] = useState(() => sortAscByPosition(FAKE_BOXES.slice(0,6)));
-    const [showLogout, setShowLogout] = useState(true);
+    const [userLogged, setUserLogged] = useState(true);
 
     // Check if the user is not logged
     useEffect(() => {
         checkLogin()
-        .catch(() => setShowLogout(false));
+        .catch(() => setUserLogged(false));
     }, []);
 
     const searchedProductId = getProductIdFromSearch(props.location.search);
@@ -31,11 +31,11 @@ export default function Index(props: PageProps) {
             <div id="index-page">
                 <Head title={pageTitle} />
                 <LinkIcon
-                    to="/login"
+                    to={userLogged ? '/users' : '/login'}
                     path={mdiAccount}
                     class="profile-icon corner-icon"
                 />
-                {showLogout && 
+                {userLogged && 
                     <LinkIcon
                         to="/logout"
                         path={mdiLogoutVariant}
