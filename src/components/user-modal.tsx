@@ -25,7 +25,7 @@ function UserModalRow(props: UserModalRowInterface) {
     return (
         <div className={props.class}>
             <div>{props.label}:</div>
-            <InputBox onChange={props.onChange} type="text" placeholder="name" value={props.value} />
+            <InputBox onChange={props.onChange} type="text" value={props.value} />
         </div>
     );
 }
