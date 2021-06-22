@@ -10,3 +10,13 @@ export async function getUsers(): Promise<UserInterface[]> {
         return [];
     }
 }
+
+export async function editUser(user: UserInterface): Promise<UserInterface> {
+    const request = await apiConnector<{user:UserInterface}>(`/users/${user.id}`, 'PUT', user, getToken());
+    return request.user;
+}
+
+export async function deleteUser(userId: string): Promise<UserInterface> {
+    const request = await apiConnector<{user:UserInterface}>(`/users/${userId}`, 'DELETE', undefined, getToken());
+    return request.user;
+}

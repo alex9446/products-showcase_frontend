@@ -5,13 +5,13 @@ interface optionsInterface {
 }
 
 function getFetchOptions(method: string, json: {}, token: string): optionsInterface {
-    const post_or_patch = method === 'POST' || method === 'PATCH';
-    const content_type_header = post_or_patch ? { 'Content-Type': 'application/json' } : {};
+    const is_post_patch_put = ['POST', 'PATCH', 'PUT'].includes(method);
+    const content_type_header = is_post_patch_put ? { 'Content-Type': 'application/json' } : {};
     const authorization_header = token ? { 'Authorization': `Bearer ${token}` } : {};
     return {
         method: method,
         headers: { ...content_type_header, ...authorization_header },
-        body: post_or_patch ? JSON.stringify(json): null
+        body: is_post_patch_put ? JSON.stringify(json): null
     }
 }
 
